@@ -1,6 +1,6 @@
 <img src="./anurith-logo.png" width="130" alt="Anurith logo" />
 
-<img src="./hero-condensed.svg" width="100%" alt="Anurith Reddy — creative production, AI automation and builds" />
+<img src="./hero-tight.svg" width="100%" alt="Anurith Reddy — creative production, AI automation and builds" />
 
 <img src="./avatar.jpg" width="130" align="right" alt="Anurith's illustrated avatar on yellow waves" />
 
