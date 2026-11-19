@@ -39,7 +39,7 @@ for d in days:
  date=datetime.date.fromisoformat(d['date']);diff=(date-first).days;x=30+(diff//7)*17.5;y=94+(diff%7)*18
  heat+=f'<rect class="cell" x="{x}" y="{y}" width="14" height="14" rx="3" fill="{colors[min(d["level"],4)]}" style="animation-delay:{diff*.001}s"><title>{d["date"]}: {d["count"]} contributions</title></rect>'
 heat+='<text x="30" y="253" font-size="12">'+days[0]['date']+' — '+days[-1]['date']+' · No private repository details shown</text>'
-(ROOT/'activity-graph.svg').write_text(svg(heat,280))
+(ROOT/'activity-calendar.svg').write_text(svg(heat,280),encoding="utf-8")
 months={}
 for d in days:months[d['date'][:7]]=months.get(d['date'][:7],0)+d['count']
 months=list(months.items())[-12:];peak=max([n for _,n in months]+[1]);bestday=max(days,key=lambda d:d['count'])
@@ -49,5 +49,5 @@ for i,(month,n) in enumerate(months):
  bars+=f'<rect class="bar" x="{x}" y="{220-h}" width="30" height="{max(h,2)}" rx="3" fill="'+('#f0c900' if n==peak else '#252525')+f'"/><text x="{x+15}" y="{210-h}" text-anchor="middle" font-size="12">{n}</text><text x="{x+15}" y="246" text-anchor="middle" font-size="11">{calendar.month_abbr[int(month[-2:])]}</text>'
 for i,(value,label) in enumerate([(str(active),'active days'),(str(streak)+' days','current streak'),(str(best)+' days','longest streak'),(str(bestday['count']),'busiest day: '+bestday['date'])]):
  y=55+i*61;bars+=f'<text x="675" y="{y}" font-size="28" font-weight="bold">{value}</text><text x="675" y="{y+20}" font-size="13">{label}</text>'
-(ROOT/'monthly-activity.svg').write_text(svg(bars,280))
+(ROOT/'monthly-activity.svg').write_text(svg(bars,280),encoding="utf-8")
 print('Rendered verified activity:',total,'contributions,',active,'active days')

@@ -2,7 +2,7 @@
 
 <img src="./hero-tight.svg" width="100%" alt="Anurith Reddy — creative production, AI automation and builds" />
 
-<img src="./activity-graph.svg" width="100%" alt="Public GitHub contribution calendar" />
+<img src="./activity-calendar.svg" width="100%" alt="Public GitHub contribution calendar" />
 
 <img src="./monthly-activity.svg" width="100%" alt="Monthly contributions, active days and streaks" />
 
